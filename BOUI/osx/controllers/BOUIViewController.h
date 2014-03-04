@@ -8,9 +8,11 @@
 
 @class BOUIModel;
 
-@interface BOUIViewController : DPViewController  {
+@interface BOUIViewController : DPViewController {
     BOUIModel *_model;
 }
 
 - (NSOperationQueue *) queue;
+- (BOUIModel *) model;
+
 @end

@@ -26,6 +26,8 @@
 @synthesize controllers;
 @synthesize usesDummyData;
 
+NSString *const kBOPreferenceAutologin = @"kBOPreferenceAutologin_Debug";
+
 + (BOUIModel *) sharedModel {
     static BOUIModel *_instance = nil;
 
@@ -45,14 +47,33 @@
     if (self) {
         //        [self addObserver: self forKeyPath: @"selectedFocusType" options: 0 context: NULL];
         //        [self addObserver: self forKeyPath: @"selectedTask" options: NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context: NULL];
-
     }
 
     return self;
 }
 
 
+- (BOOL) autologins {
+    return [[self savedObjectForKey: kBOPreferenceAutologin] boolValue];
+}
 
+- (void) setAutologins: (BOOL) autologins {
+    [self saveObject: [NSNumber numberWithBool: autologins] forKey: kBOPreferenceAutologin];
+}
+
+
+
+#pragma mark Getters
+
+
+- (BOAPIModel *) apiModel {
+    return [BOAPIModel sharedModel];
+}
+
+
+- (NSOperationQueue *) queue {
+    return self.apiModel.queue;
+}
 
 #pragma mark Defaults
 
@@ -263,10 +284,6 @@
 
 }
 
-
-- (BOAPIModel *) apiModel {
-    return [BOAPIModel sharedModel];
-}
 
 
 

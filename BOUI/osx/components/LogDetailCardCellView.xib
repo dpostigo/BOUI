@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment defaultVersion="1080" identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
     </dependencies>
     <objects>
@@ -9,11 +8,11 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application"/>
         <tableCellView identifier="DataCell" wantsLayer="YES" horizontalHuggingPriority="1000" verticalHuggingPriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="lRi-zw-n6s" customClass="LogDetailCardCellView">
-            <rect key="frame" x="0.0" y="0.0" width="299" height="179"/>
+            <rect key="frame" x="0.0" y="0.0" width="296" height="177"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zvm-to-qm6">
-                    <rect key="frame" x="8" y="157" width="46" height="12"/>
+                    <rect key="frame" x="8" y="155" width="46" height="12"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="LOG NOTE" id="5nV-BD-sk2">
                         <font key="font" size="8" name="Arial-BoldMT"/>
@@ -22,7 +21,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9mr-KC-fkd">
-                    <rect key="frame" x="8" y="114" width="40" height="13"/>
+                    <rect key="frame" x="8" y="112" width="40" height="13"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="SERVICE" id="Rmt-68-3BP">
                         <font key="font" size="8" name="ArialRoundedMTBold"/>
@@ -31,7 +30,7 @@
                     </textFieldCell>
                 </textField>
                 <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OdT-4a-Sli">
-                    <rect key="frame" x="7" y="134" width="277" height="23"/>
+                    <rect key="frame" x="7" y="132" width="279" height="23"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" lineBreakMode="truncatingTail" truncatesLastVisibleLine="YES" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="border" focusRingType="none" placeholderString="Log note" usesSingleLineMode="YES" id="D5g-Cd-SPB" customClass="DPUnderlineTextFieldCell">
                         <font key="font" size="13" name="HelveticaNeue"/>
@@ -39,41 +38,33 @@
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                     <connections>
-                        <binding destination="lRi-zw-n6s" name="value" keyPath="objectValue.objectValue.title" id="mYK-Am-KCf"/>
+                        <binding destination="lRi-zw-n6s" name="value" keyPath="objectValue.objectValue.title" id="Ju1-eb-WnE">
+                            <dictionary key="options">
+                                <string key="NSNullPlaceholder">Log note</string>
+                            </dictionary>
+                        </binding>
                     </connections>
                 </textField>
-                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PKm-g1-1LY">
-                    <rect key="frame" x="7" y="91" width="277" height="23"/>
+                <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pJd-8z-y60">
+                    <rect key="frame" x="8" y="51" width="135.5" height="15"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="border" placeholderString="Service Item" usesSingleLineMode="YES" id="dzn-xx-eoI" customClass="DPUnderlineTextFieldCell">
-                        <font key="font" size="13" name="HelveticaNeue"/>
-                        <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                    <connections>
-                        <binding destination="lRi-zw-n6s" name="value" keyPath="objectValue.objectValue.serviceItem.title" id="oMb-Tm-BC7"/>
-                    </connections>
-                </textField>
-                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pJd-8z-y60">
-                    <rect key="frame" x="8" y="56" width="136" height="15"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" placeholderString="00:00" id="u9b-uN-Rp1">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" focusRingType="none" placeholderString="00:00" id="u9b-uN-Rp1">
                         <font key="font" size="11" name="HelveticaNeue"/>
                         <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XWE-Ao-HIb">
-                    <rect key="frame" x="150" y="56" width="136" height="15"/>
+                <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XWE-Ao-HIb">
+                    <rect key="frame" x="149" y="51" width="135.5" height="15"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" placeholderString="00:00" id="WOd-kZ-a3H">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" focusRingType="none" placeholderString="00:00" id="WOd-kZ-a3H">
                         <font key="font" size="11" name="HelveticaNeue"/>
                         <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="k5L-Rz-cB8">
-                    <rect key="frame" x="8" y="71" width="136" height="12"/>
+                    <rect key="frame" x="8" y="66" width="135.5" height="12"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="START TIME" id="wnw-1s-SOi">
                         <font key="font" size="8" name="Arial-BoldMT"/>
@@ -82,7 +73,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ef7-7T-tIk">
-                    <rect key="frame" x="150" y="71" width="136" height="12"/>
+                    <rect key="frame" x="149" y="66" width="135.5" height="12"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="END TIME" id="tqX-bI-Cse">
                         <font key="font" size="8" name="Arial-BoldMT"/>
@@ -90,50 +81,63 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ykm-10-87b">
-                    <rect key="frame" x="205" y="8" width="85" height="32"/>
+                <button horizontalHuggingPriority="1000" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ykm-10-87b">
+                    <rect key="frame" x="205" y="3" width="87" height="32"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="push" title="Submit" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="OJN-ly-Hg7">
+                    <buttonCell key="cell" type="push" title="Post Log" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="OJN-ly-Hg7" customClass="DPOnyxButtonCell">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
+                        <font key="font" size="11" name="HelveticaNeue-Bold"/>
                     </buttonCell>
                     <connections>
                         <binding destination="lRi-zw-n6s" name="hidden" keyPath="objectValue.objectValue.isCreated" id="gqG-a2-55b"/>
                     </connections>
                 </button>
+                <comboBox verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="o80-Di-7dU" customClass="DPControllerComboBox">
+                    <rect key="frame" x="7" y="89" width="279" height="23"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" placeholderString="Service Item" buttonBordered="NO" numberOfVisibleItems="5" id="ygX-FK-j63" customClass="DPUnderlineComboBoxCell">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </comboBoxCell>
+                </comboBox>
             </subviews>
             <constraints>
+                <constraint firstItem="o80-Di-7dU" firstAttribute="top" secondItem="9mr-KC-fkd" secondAttribute="bottom" constant="2" id="83F-XG-ygt"/>
                 <constraint firstItem="OdT-4a-Sli" firstAttribute="top" secondItem="zvm-to-qm6" secondAttribute="bottom" id="9fK-vB-zAF"/>
-                <constraint firstItem="PKm-g1-1LY" firstAttribute="trailing" secondItem="OdT-4a-Sli" secondAttribute="trailing" id="BL6-BI-FSe"/>
                 <constraint firstItem="k5L-Rz-cB8" firstAttribute="leading" secondItem="pJd-8z-y60" secondAttribute="leading" id="EFx-zJ-2uA"/>
-                <constraint firstItem="PKm-g1-1LY" firstAttribute="top" secondItem="OdT-4a-Sli" secondAttribute="bottom" constant="20" id="FQj-7p-Cbc"/>
                 <constraint firstItem="pJd-8z-y60" firstAttribute="top" secondItem="k5L-Rz-cB8" secondAttribute="bottom" id="FSO-IA-yV7"/>
-                <constraint firstItem="XWE-Ao-HIb" firstAttribute="trailing" secondItem="PKm-g1-1LY" secondAttribute="trailing" id="KCH-nD-ygQ"/>
                 <constraint firstItem="9mr-KC-fkd" firstAttribute="leading" secondItem="k5L-Rz-cB8" secondAttribute="leading" id="Krl-4q-myR"/>
-                <constraint firstItem="PKm-g1-1LY" firstAttribute="top" secondItem="9mr-KC-fkd" secondAttribute="bottom" id="NH6-wd-0hO"/>
-                <constraint firstItem="PKm-g1-1LY" firstAttribute="leading" secondItem="OdT-4a-Sli" secondAttribute="leading" id="Oe7-Ps-3ue"/>
-                <constraint firstAttribute="trailing" secondItem="OdT-4a-Sli" secondAttribute="trailing" constant="15" id="TwK-aO-YDo"/>
+                <constraint firstItem="o80-Di-7dU" firstAttribute="leading" secondItem="OdT-4a-Sli" secondAttribute="leading" id="MI0-nD-Sg8"/>
+                <constraint firstItem="o80-Di-7dU" firstAttribute="trailing" secondItem="OdT-4a-Sli" secondAttribute="trailing" constant="-3" id="RxW-8o-2Z8"/>
+                <constraint firstAttribute="trailing" secondItem="OdT-4a-Sli" secondAttribute="trailing" constant="10" id="TwK-aO-YDo"/>
                 <constraint firstItem="zvm-to-qm6" firstAttribute="top" secondItem="lRi-zw-n6s" secondAttribute="top" constant="10" id="UNl-i6-bHb"/>
                 <constraint firstItem="Ef7-7T-tIk" firstAttribute="trailing" secondItem="XWE-Ao-HIb" secondAttribute="trailing" id="Vbs-fi-C7B"/>
                 <constraint firstItem="Ef7-7T-tIk" firstAttribute="leading" secondItem="XWE-Ao-HIb" secondAttribute="leading" id="Vna-fH-HEZ"/>
                 <constraint firstItem="XWE-Ao-HIb" firstAttribute="top" secondItem="Ef7-7T-tIk" secondAttribute="bottom" id="Vt6-6D-ofl"/>
-                <constraint firstAttribute="bottom" secondItem="Ykm-10-87b" secondAttribute="bottom" constant="15" id="adV-H7-MS2"/>
+                <constraint firstAttribute="bottom" secondItem="Ykm-10-87b" secondAttribute="bottom" constant="10" id="adV-H7-MS2"/>
                 <constraint firstItem="XWE-Ao-HIb" firstAttribute="top" secondItem="pJd-8z-y60" secondAttribute="top" id="apG-FL-8k1"/>
                 <constraint firstItem="Ykm-10-87b" firstAttribute="leading" secondItem="lRi-zw-n6s" secondAttribute="leading" constant="211" id="cKO-br-NTB"/>
                 <constraint firstItem="Ykm-10-87b" firstAttribute="trailing" secondItem="OdT-4a-Sli" secondAttribute="trailing" id="cqS-dG-dv7"/>
                 <constraint firstItem="9mr-KC-fkd" firstAttribute="leading" secondItem="zvm-to-qm6" secondAttribute="leading" id="hZM-gT-OX5"/>
+                <constraint firstItem="XWE-Ao-HIb" firstAttribute="trailing" secondItem="o80-Di-7dU" secondAttribute="trailing" id="iGJ-g9-YhY"/>
                 <constraint firstItem="zvm-to-qm6" firstAttribute="leading" secondItem="OdT-4a-Sli" secondAttribute="leading" constant="3" id="l55-He-f0V"/>
                 <constraint firstItem="Ykm-10-87b" firstAttribute="top" secondItem="pJd-8z-y60" secondAttribute="bottom" constant="20" id="maO-8h-e0F"/>
                 <constraint firstItem="zvm-to-qm6" firstAttribute="leading" secondItem="lRi-zw-n6s" secondAttribute="leading" constant="10" id="mbf-ck-Olx"/>
+                <constraint firstItem="k5L-Rz-cB8" firstAttribute="top" secondItem="o80-Di-7dU" secondAttribute="bottom" constant="15" id="nDP-Vj-2hj"/>
+                <constraint firstItem="o80-Di-7dU" firstAttribute="top" secondItem="OdT-4a-Sli" secondAttribute="bottom" constant="22" id="nsR-XB-FMT"/>
                 <constraint firstItem="Ef7-7T-tIk" firstAttribute="leading" secondItem="XWE-Ao-HIb" secondAttribute="leading" id="ojv-aW-cZs"/>
                 <constraint firstItem="XWE-Ao-HIb" firstAttribute="leading" secondItem="pJd-8z-y60" secondAttribute="trailing" constant="10" id="tmX-HS-aWF"/>
                 <constraint firstItem="XWE-Ao-HIb" firstAttribute="width" secondItem="pJd-8z-y60" secondAttribute="width" id="uaw-A6-ykC"/>
                 <constraint firstItem="pJd-8z-y60" firstAttribute="trailing" secondItem="k5L-Rz-cB8" secondAttribute="trailing" id="vWE-Mx-hTY"/>
-                <constraint firstItem="k5L-Rz-cB8" firstAttribute="top" secondItem="PKm-g1-1LY" secondAttribute="bottom" constant="8" id="yVF-EJ-Uky"/>
             </constraints>
             <shadow key="shadow">
                 <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             </shadow>
+            <connections>
+                <outlet property="noteField" destination="OdT-4a-Sli" id="YAU-AA-OO3"/>
+                <outlet property="serviceComboBox" destination="o80-Di-7dU" id="5k2-nw-oFL"/>
+            </connections>
         </tableCellView>
         <customView id="ZEI-zN-tRa">
             <rect key="frame" x="0.0" y="0.0" width="64" height="163"/>

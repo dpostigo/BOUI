@@ -11,8 +11,6 @@
 
 @implementation BOUIStyles
 
-
-
 + (NSShadow *) defaultShadow {
     return [BOUIStyles defaultShadowWithRadius: 2.0];
 }

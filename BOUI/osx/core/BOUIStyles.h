@@ -10,6 +10,7 @@
 
 }
 
++ (NSColor *) onyxHighlightColor;
 + (NSShadow *) defaultShadow;
 + (NSShadow *) defaultShadowWithRadius: (CGFloat) radius;
 + (NSShadow *) defaultShadowWithRadius: (CGFloat) radius offset: (NSSize) offset;

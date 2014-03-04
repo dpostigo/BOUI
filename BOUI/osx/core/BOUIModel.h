@@ -14,6 +14,9 @@
 @class Task;
 @class BOAPIModel;
 
+
+extern NSString *const kBOPreferenceAutologin;
+
 @interface BOUIModel : BasicModel <BOAPIDelegate> {
 
     BOOL usesDummyData;
@@ -25,6 +28,11 @@
 
     NSMutableDictionary *controllers;
 }
+
+
+
+@property(nonatomic) BOOL autologins;
+
 
 @property(nonatomic, strong) NSString *username;
 
@@ -42,10 +50,13 @@
 
 
 @property(nonatomic, strong) NSMutableDictionary *controllers;
-+ (BOUIModel *) sharedModel;
-- (NSMutableArray *) tasks;
 
+
++ (BOUIModel *) sharedModel;
+- (BOAPIModel *) apiModel;
+
+- (NSOperationQueue *) queue;
+- (NSMutableArray *) tasks;
 - (void) signOut;
 - (void) createTask: (NSString *) name;
-- (BOAPIModel *) apiModel;
 @end

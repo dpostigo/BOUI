@@ -20,4 +20,8 @@
     return [BOAPIModel sharedModel].queue;
 }
 
+- (BOUIModel *) model {
+    return [BOUIModel sharedModel];
+}
+
 @end

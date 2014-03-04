@@ -5,11 +5,23 @@
 
 #import <NSColor-Crayola/NSColor+Crayola.h>
 #import <NSColor-BlendingUtils/NSColor+BlendingUtils.h>
+#import <NSView-NewConstraints/NSView+NewConstraint.h>
 #import "LogDetailCardCellView.h"
 #import "NSView+DPKit.h"
 #import "NSShadow+DPKit.h"
+#import "DPControllerComboBox.h"
+#import "NSView+ConstraintGetters.h"
+#import "NSView+NewConstraint.h"
+#import "NSLayoutConstraint+DPUtils.h"
+#import "NSView+ConstraintFinders.h"
+#import "BOAPIModel.h"
+#import "DPUnderlineComboBoxCell.h"
 
 @implementation LogDetailCardCellView
+
+@synthesize noteField;
+@synthesize serviceField;
+@synthesize serviceComboBox;
 
 - (id) initWithFrame: (NSRect) frameRect {
     self = [self loadFromNib: [self className]];
@@ -28,22 +40,10 @@
     return [NSColor crayolaCoconutColor];
 }
 
-- (id) initWithCoder: (NSCoder *) coder {
-    self = [super initWithCoder: coder];
-    if (self) {
-
-        NSLog(@"%s", __PRETTY_FUNCTION__);
-
-    }
-
-    return self;
-}
-
 
 - (void) awakeFromNib {
     [super awakeFromNib];
 
-    NSLog(@"self.objectValue = %@", self.objectValue);
     [self setupBackground];
 }
 
@@ -67,5 +67,23 @@
 
 }
 
+
+- (void) modify {
+
+    //    NSRect rect = serviceField.frame;
+    //    //    rect.origin.x += 5;
+    //
+    //    serviceComboBox = [[DPControllerComboBox alloc] initWithFrame: rect];
+    //    //    [serviceComboBox setCell: [[DPUnderlineComboBoxCell alloc] init]];
+    //    [serviceComboBox setButtonBordered: NO];
+    //    serviceComboBox.focusRingType = NSFocusRingTypeNone;
+
+
+    [serviceComboBox.controller setContent: [BOAPIModel sharedModel].serviceItems];
+    [serviceComboBox bind: @"contentValues" toObject: serviceComboBox.controller withKeyPath: @"arrangedObjects.title" options: nil];
+    serviceComboBox.font = noteField.font;
+    serviceComboBox.textColor = noteField.textColor;
+
+}
 
 @end

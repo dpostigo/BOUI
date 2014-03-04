@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="BOUILoginController">
+            <connections>
+                <outlet property="autoLoginCheckbox" destination="vGz-KR-Qp0" id="YX6-do-Nzf"/>
+                <outlet property="passwordField" destination="TqE-Kx-5tg" id="Usy-QE-ONX"/>
+                <outlet property="userField" destination="Ur1-41-Hdw" id="sgp-iz-0kK"/>
+                <outlet property="view" destination="Yks-eC-284" id="Ns3-37-AjI"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application"/>
+        <customView id="Yks-eC-284">
+            <rect key="frame" x="0.0" y="0.0" width="277" height="210"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="vGz-KR-Qp0">
+                    <rect key="frame" x="18" y="80" width="73" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="check" title="Auto-login" bezelStyle="regularSquare" imagePosition="left" inset="2" id="lF1-K4-cRL">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" size="11" name="HelveticaNeue"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="self.model.autologins" id="hCD-qX-Lrr"/>
+                    </connections>
+                </button>
+                <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ur1-41-Hdw">
+                    <rect key="frame" x="20" y="138" width="237" height="24"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" focusRingType="none" placeholderString="dani@firstperson.is" drawsBackground="YES" usesSingleLineMode="YES" id="uM3-2i-HbF">
+                        <font key="font" size="13" name="HelveticaNeue"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eV2-fF-2Qu">
+                    <rect key="frame" x="123" y="179" width="34" height="11"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="LOGIN" id="QLo-yg-dF4">
+                        <font key="font" metaFont="miniSystemBold"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Pb0-cC-zMs">
+                    <rect key="frame" x="20" y="18" width="237" height="25"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="roundTextured" title="LOGIN" bezelStyle="texturedRounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="fKK-n8-cOx" customClass="DPOnyxButtonCell">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" size="11" name="HelveticaNeue-Bold"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="submit:" target="-2" id="oTu-e5-sS5"/>
+                    </connections>
+                </button>
+                <secureTextField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TqE-Kx-5tg">
+                    <rect key="frame" x="20" y="104" width="237" height="24"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" focusRingType="none" drawsBackground="YES" usesSingleLineMode="YES" id="LEJ-uM-5lf">
+                        <font key="font" size="13" name="HelveticaNeue"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        <allowedInputSourceLocales>
+                            <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                        </allowedInputSourceLocales>
+                    </secureTextFieldCell>
+                </secureTextField>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Ur1-41-Hdw" secondAttribute="trailing" constant="20" id="4Gc-8U-fzh"/>
+                <constraint firstItem="Pb0-cC-zMs" firstAttribute="top" relation="greaterThanOrEqual" secondItem="vGz-KR-Qp0" secondAttribute="bottom" constant="30" id="7fE-xu-yle"/>
+                <constraint firstItem="eV2-fF-2Qu" firstAttribute="top" secondItem="Yks-eC-284" secondAttribute="top" constant="20" id="9xQ-sf-h8q"/>
+                <constraint firstItem="Ur1-41-Hdw" firstAttribute="leading" secondItem="TqE-Kx-5tg" secondAttribute="leading" id="FwJ-Pk-5ZR"/>
+                <constraint firstItem="vGz-KR-Qp0" firstAttribute="top" secondItem="TqE-Kx-5tg" secondAttribute="bottom" constant="8" id="Ijl-Ui-s6f"/>
+                <constraint firstItem="TqE-Kx-5tg" firstAttribute="top" secondItem="Ur1-41-Hdw" secondAttribute="bottom" constant="10" id="Q1h-Ib-Qrx"/>
+                <constraint firstItem="Ur1-41-Hdw" firstAttribute="leading" secondItem="Yks-eC-284" secondAttribute="leading" constant="20" id="RIf-Uo-3Xf"/>
+                <constraint firstAttribute="bottom" secondItem="Pb0-cC-zMs" secondAttribute="bottom" constant="20" id="URX-OQ-GTd"/>
+                <constraint firstItem="Ur1-41-Hdw" firstAttribute="trailing" secondItem="TqE-Kx-5tg" secondAttribute="trailing" id="WKD-y8-4qN"/>
+                <constraint firstItem="Ur1-41-Hdw" firstAttribute="top" secondItem="eV2-fF-2Qu" secondAttribute="bottom" constant="17" id="WTS-SF-vyX"/>
+                <constraint firstItem="Pb0-cC-zMs" firstAttribute="trailing" secondItem="Ur1-41-Hdw" secondAttribute="trailing" id="kPp-WG-HnV"/>
+                <constraint firstAttribute="centerX" secondItem="eV2-fF-2Qu" secondAttribute="centerX" constant="-1" id="s7J-Qj-G81"/>
+                <constraint firstItem="vGz-KR-Qp0" firstAttribute="leading" secondItem="TqE-Kx-5tg" secondAttribute="leading" id="w3N-Bw-Tbt"/>
+                <constraint firstItem="Pb0-cC-zMs" firstAttribute="leading" secondItem="Ur1-41-Hdw" secondAttribute="leading" id="wLs-uR-9mg"/>
+            </constraints>
+        </customView>
+    </objects>
+</document>
